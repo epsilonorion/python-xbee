@@ -33,31 +33,31 @@ class DigiMesh(XBeeBase):
     #         ...
     #         }
     api_commands = {"at":
-                        [{'name':'id',        'len':1,      'default':'\x08'},
-                         {'name':'frame_id',  'len':1,      'default':'\x00'},
+                        [{'name':'id',        'len':1,      'default':b'\x08'},
+                         {'name':'frame_id',  'len':1,      'default':b'\x00'},
                          {'name':'command',   'len':2,      'default':None},
                          {'name':'parameter', 'len':None,   'default':None}],
                     "queued_at":
-                        [{'name':'id',        'len':1,      'default':'\x09'},
-                         {'name':'frame_id',  'len':1,      'default':'\x00'},
+                        [{'name':'id',        'len':1,      'default':b'\x09'},
+                         {'name':'frame_id',  'len':1,      'default':b'\x00'},
                          {'name':'command',   'len':2,      'default':None},
                          {'name':'parameter', 'len':None,   'default':None}],
                     #explicit adrresing command frame - to do!
                     "remote_at":
-                        [{'name':'id',              'len':1,        'default':'\x17'},
-                         {'name':'frame_id',        'len':1,        'default':'\x00'},
+                        [{'name':'id',              'len':1,        'default':b'\x17'},
+                         {'name':'frame_id',        'len':1,        'default':b'\x00'},
                          {'name':'dest_addr_long',  'len':8,        'default':None},
-                         {'name':'reserved',        'len':2,        'default':'\xFF\xFE'},
-                         {'name':'options',         'len':1,        'default':'\x02'},
+                         {'name':'reserved',        'len':2,        'default':b'\xFF\xFE'},
+                         {'name':'options',         'len':1,        'default':b'\x02'},
                          {'name':'command',         'len':2,        'default':None},
                          {'name':'parameter',       'len':None,     'default':None}],
                     "tx":
-                        [{'name':'id',              'len':1,        'default':'\x10'},
-                         {'name':'frame_id',        'len':1,        'default':'\x00'},
+                        [{'name':'id',              'len':1,        'default':b'\x10'},
+                         {'name':'frame_id',        'len':1,        'default':b'\x00'},
                          {'name':'dest_addr',       'len':8,        'default':None},
-                         {'name':'reserved',        'len':2,         'default':'\xFF\xFE'},
-                         {'name':'broadcast_radius', 'len':1,         'default':'\x00'},
-                         {'name':'options',         'len':1,        'default':'\x00'},
+                         {'name':'reserved',        'len':2,         'default':b'\xFF\xFE'},
+                         {'name':'broadcast_radius', 'len':1,         'default':b'\x00'},
+                         {'name':'options',         'len':1,        'default':b'\x00'},
                          {'name':'data',            'len':None,     'default':None}],
 
                     }
@@ -91,7 +91,7 @@ class DigiMesh(XBeeBase):
                         {'name':'tx_status',
                          'structure':
                             [{'name':'frame_id',        'len':1},
-                             {'name':'reserved',        'len':2, 'default':'\xFF\xFE'},
+                             {'name':'reserved',        'len':2, 'default':b'\xFF\xFE'},
                              {'name':'retries',         'len':1},
                              {'name':'deliver_status',  'len':1},
                              {'name':'discover_status', 'len':1}]},

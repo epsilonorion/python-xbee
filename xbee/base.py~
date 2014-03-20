@@ -129,10 +129,9 @@ class XBeeBase(threading.Thread):
                     
                 while(frame.remaining_bytes() > 0):
                     try:
-                        byte = self.serial.read()
-                    except serial.SerialException:
-                        #TODO: This is a hack to ignore serial exception and should be solved later
-                        pass
+			byte = self.serial.read()
+		    except:
+			print("JOSH GOT HERE INSTEAD")
                     
                     if len(byte) == 1:
                         frame.fill(byte)
