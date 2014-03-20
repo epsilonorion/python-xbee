@@ -4,3 +4,9 @@
 *.swp
 *.swo
 build
+
+#General
+*~
+*.bak
+*.goutputstream*
+
